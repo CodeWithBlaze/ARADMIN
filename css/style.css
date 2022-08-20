@@ -7,7 +7,7 @@ body{
     box-sizing: border-box;
 }
 .action-container{
-    background-image:url('/asset/background.jpg');
+    background-image:url('../asset/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
