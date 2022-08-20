@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script defer src="js/database.js"></script>
+    <script defer src="js/updateModel.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="update-model-form-container">
+            <form class="addModel-form" onsubmit="" id="update-model-form">
+                <select name="models-list" id="models-list"  onchange="getSelectedModel()" >
+                    <option value="">Choose model</option>
+                </select>
+                <textarea id="model-viewer-data"  class="model-content" onchange="getAnnotations()"></textarea>
+                <input placeholder="Model name" class="form-input-box" id="name">
+                <input placeholder="Street View url" id="street-view" class="form-input-box" >
+                <div id="images-list">
+                    
+                </div>
+                <input placeholder="Image Url" id="image" class="form-input-box">
+                <button onclick="addImage()" class="model-action-btn color-btn" style="background-color: #7E65FB;width:50%;height:40px;align-self:flex-start;">Add Image</button>
+                <div id="data-input">
+
+                </div>
+                <button class="model-action-btn color-btn" style="background-color: #7E65FB;width:100%;height:50px;margin-top: 60px;" onclick="update()">Submit</button>
+            </form>
+        </div>
+        <div class="model-viewer-container">
+            <model-viewer 
+                style="width:100%;height:100vh;background-color: white;border-radius: 5px;"
+                src="scene.glb"
+                ar ar-modes="webxr scene-viewer quick-look" 
+                seamless-poster shadow-intensity="1" 
+                id="viewer"
+                interaction-prompt
+                camera-controls enable-pan>
+            </model-viewer>
+        </div>
+    </div>
+</body>
+</html>

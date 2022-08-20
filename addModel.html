@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARLearn Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="js/database.js"></script>
+    <script defer src="js/addModel.js"></script>
+</head>
+<body>
+    <div class="model-add-form-container">
+        <div class="addModel-form-container">
+            <form class="addModel-form" onsubmit="" id="add-model-form">
+                <input placeholder="Model name" class="form-input-box" id="name">
+                <input type="file" style="display:none;" id="file-upload">
+                <div style="align-self:flex-start;width:100%;">
+                    <button class="model-action-btn color-btn" onclick="uploadFile()" style="background-color: #7E65FB;width:50%;height:40px;align-self:flex-start;">Choose File</button>
+                </div>
+                <p id="selected-file"></p>
+                <progress value="0" max="100" id="progress" style="align-self:flex-start;margin-bottom:15px;display:none;width:100%;"></progress>
+                <input placeholder="Street View url" id="street-view" class="form-input-box" >
+                <div id="images-list">
+                    
+                </div>
+                <input placeholder="Image Url" id="image" class="form-input-box">
+                <button onclick="addImage()" class="model-action-btn color-btn" style="background-color: #7E65FB;width:50%;height:40px;align-self:flex-start;">Add Image</button>
+                <button class="model-action-btn color-btn" style="background-color: #7E65FB;width:100%;height:50px;margin-top: 60px;" onclick="uploadFileToDatabase()">Submit</button>
+            </form>
+        </div>
+        <img src="./asset/background.jpg">
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+body{
+    box-sizing: border-box;
+}
+.action-container{
+    background-image:url('/asset/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+.sub-action-container{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    color:white;
+    font-weight: 600px;
+    font-size:60px;
+    font-family:"ONE DAY";
+    letter-spacing: 10px;
+    margin-bottom: 60px;
+}
+.model-action-btn{
+    width:150px;
+    height:60px;
+    border:none;
+    border-radius: 5px;
+    font-family:"ONE DAY";
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background-color:black ;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.model-action-btn:hover{
+    border:2px solid white;
+}
+.addModel-form{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    width:400px;
+    min-height: 600px;
+    height:fit-content;
+    background-color:black;
+    border-radius: 5px;
+    padding-top: 25px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-bottom: 25px;
+}
+.form-input-box{
+    width: 100%;
+    height:50px;
+    border-radius: 5px;
+    background-color: transparent;
+    color:white;
+    border:1px solid #7E65FB;
+    font-family:Quicksand;
+    padding-left: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.model-add-form-container{
+    display: flex;
+    background-color:#7E65FB;
+}
+.addModel-form-container{
+    display: flex;
+    flex-grow:1;
+    justify-content: center;
+    align-items: center;
+}
+.model-add-form-container img{
+    width:60%;
+    height: 100vh;
+    object-fit: cover;
+}
+#images-list{
+    width: 100%;
+}
+.url-list{
+    padding:5px;
+    color:white;
+    font-family: "ONE DAY";
+    list-style-type:none;
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+    background-color: cornflowerblue;
+}
+#selected-file{
+    font-family: Quicksand;
+    align-self: flex-start;
+    color:#7E65FB;
+    margin-bottom: 15px;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    height:fit-content;
+    display: flex;
+}
+.update-model-form-container{
+    width: 30%;
+    background-color:#7E65FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.model-viewer-container{
+    width: 70%;
+    background-color:black;
+    padding: 40px;
+}
+.model-content{
+    width:100%;
+    height: 360px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    border-color: #7E65FB;
+    color:white;
+}
+#data-input{
+    font-family: Quicksand;
+    color:white;
+}
+#data-input p{
+    margin-bottom: 15px;
+}
+#data-input textarea{
+    margin-bottom: 15px;
+}
+#models-list{
+    width: 100%;
+    height:50px;
+    margin-bottom: 15px;
+    font-family: Quicksand;    
+    font-weight: 600;
+}
