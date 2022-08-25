@@ -61,3 +61,29 @@ function updateDocument(collection,id,updatedDocs){
         console.log("updated Successfully")
     }).catch(err=>console.log("somehing went wrong",err))
 }
+function addQuestion(ques){
+    db.collection('questions').add(ques).then((res)=>addAnswer(res.id)).catch((err)=>{
+        console.log(err)
+    })
+}
+function addAnswer(id){
+    const answer = document.getElementById('correct_answer').value;
+    db.collection('answers').doc(id).set({value:answer}).then(res=>console.log("added")).catch(err=>console.log(err))
+}
+
+function fetchQuestions(age,monument){
+    console.log("Screen")
+    db.collection("questions").where('age','==',age).where('monument','==',monument).get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+}
+function matchAnswer(question,answer){
+    db.collection('answers').doc(question.id).get().then(res=>console.log(res.data()));
+}
